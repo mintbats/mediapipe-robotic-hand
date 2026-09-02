@@ -1,3 +1,4 @@
+# Robotic hand control using MediaPipe and Arduino
 """
 MediaPipe Robotic Hand Controller
 
