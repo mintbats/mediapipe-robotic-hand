@@ -4,21 +4,21 @@ A tendon-driven robotic hand that mirror a user's hand movement in real time usi
 
 
 
-## Overview
+### Overview
 
 This project uses a webcam and MediaPipe to detect hand landmarks and calculate finger bend angles.
 
 The Arduino controls five servo motors that pull tendons attached to the robotic fingers.
 
+### 
 
-
-##### How it works
+### How it works
 
 Webcam -> MediaPipe -> Finger angle calculation -> Servo angle mapping -> EMA smoothing -> Serial communication -> Arduino -> Servo motors -> Robotic hand movement
 
 
 
-##### Hardware
+### Hardware
 
 * Arduino UNO r3
 * MG90S micro servo motors x5
@@ -28,9 +28,9 @@ Webcam -> MediaPipe -> Finger angle calculation -> Servo angle mapping -> EMA sm
 * Breadboard and jumper wires
 * Webcam
 
+### 
 
-
-##### Software
+### Software
 
 * Python
 * OpenCV
@@ -42,9 +42,9 @@ Webcam -> MediaPipe -> Finger angle calculation -> Servo angle mapping -> EMA sm
 
 
 
-Hand Tracking
+### Hand Tracking
+
 The webcam is processed using MediaPipe, which detects 21 landmarks on the user's hand.
----
 
 For each finger, selected landmarks are used to calculate a bend angle:
 
@@ -64,9 +64,9 @@ The angles between these landmarks are used to calculate how bent each finger is
 
 
 
+### 
 
-
-##### Finger Angle Calculation
+### Finger Angle Calculation
 
 Three landmarks form two vectors around the finger joint.
 
@@ -80,7 +80,7 @@ Each finger is calibrated independently because servo orientation, tendon routin
 
 
 
-##### EMA Smoothing
+### EMA Smoothing
 
 Raw hand tracking movements can fluctuate between video frames. Sending every fluctuation to servo can cause jittery movement.
 
@@ -88,7 +88,7 @@ Raw hand tracking movements can fluctuate between video frames. Sending every fl
 
 
 
-##### Serial Communication
+### Serial Communication
 
 Python sends five calculated servo position to the Arduino through serial communication.
 
@@ -102,9 +102,9 @@ A deadband is also used to avoid repeatedly sending very small changes.
 
 
 
+### 
 
-
-##### Installation
+### Installation
 
 pip install -r requirements.txt
 
@@ -120,7 +120,7 @@ Upload the Arduino program to the Arduino board before running the python contro
 
 
 
-##### Running the Project
+### Running the Project
 
 1. Connect the Arduino and servo control system
 2. Upload the Arduino program
@@ -132,7 +132,7 @@ Upload the Arduino program to the Arduino board before running the python contro
 
 
 
-##### What I Learned
+### What I Learned
 
 Through this project, I worked with:
 
@@ -149,7 +149,7 @@ Through this project, I worked with:
 
 ##### 
 
-##### Future Improvements
+### Future Improvements
 
 Possible future developments include:
 
@@ -160,7 +160,7 @@ Possible future developments include:
 
 ##### 
 
-##### Credits
+### Credits
 
 The 3D printed robotic hand model used in this project is based on the Arduino Flex Sensor Controlled Robot Hand project by Viral Science.
 
