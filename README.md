@@ -46,6 +46,33 @@ Webcam -> MediaPipe -> Finger angle calculation -> Servo angle mapping -> EMA sm
 
 
 
+Hand Tracking:
+The webcam is processed using MediaPipe, which detects 21 landmarks on the user's hand.
+
+For each finger, selected landmarks are used to calculate a bend angle:
+
+Finger: Lanmarks used
+
+Thumb: MCP (2), IP(3), TIP(4)
+
+Index: MCP (5), PIP(6), TIP(8)
+
+Middle: MCP (9), IP(10), TIP(12)
+
+Ring: MCP (13), IP(14), TIP(16)
+
+Pinky: MCP (17), IP(18), TIP(20)
+
+The angles between these landmarks are used to calculate how bent each finger is. These hand angles are then mapped to calibrated servo angle for the robotic hand.
+
+
+
+
+
+
+
+
+
 Credits:
 
 The 3D printed robotic hand model used in this project is based on the Arduino Flex Sensor Controlled Robot Hand project by Viral Science
